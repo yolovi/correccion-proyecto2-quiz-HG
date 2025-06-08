@@ -8,6 +8,9 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
+  <!-- CORRECCION:
+    esto lo metemos en un CSS propio 
+  -->
   <style>
     .quiz-container {
       max-width: 500px;
@@ -36,7 +39,12 @@
       </form>
       <div id="last-results" class="mt-4"></div>
     </div>
-
+    <!-- CORRECCION:
+        Los siguientes dos divs que generas están ocultos. Eso quiere decir que estás consumiendo tiempo y recursos
+        para contenido que no se va a visualizar hasta un determinado momento. Además es contenido que no necesitamos
+        tener preparado con antelación.
+        Lo correcto sería tener un solo contenedor principal y cambiar lo que muestra creándolo dinámicamente cuando sea necesario.
+    -->
     <!-- QUESTIONS -->
     <div id="questions" class="hidden">
       <div id="question-number" class="mb-2"></div>
@@ -53,7 +61,12 @@
       <button id="restart-btn" class="btn btn-primary">Volver a jugar</button>
     </div>
   </div>
-
+  
+  <!-- CORRECCION:
+    main.js (si tuvieramos más js nombres descriptivos) 
+    te falta importar la libreria de chart antes de tu js:
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  -->
   <script src="eje.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+/**
+ * CORRECCION:
+ * Indentación y orden incorrectos. El orden correcto es: elementos del DOM > variables > eventos > funciones
+ */
 let userName = "";
     let questions = [];
     let currentQuestion = 0;
@@ -45,6 +49,15 @@ let userName = "";
       questionsDiv.classList.remove("hidden");
     });
 
+    /**
+ * CORRECCION:
+ * esta API_URL no es escalable, en este ejercicio te vale al ser muy sencillo.
+ * Pero ten presente que la forma adecuada sería tener en una constante la base de la Url y después añadir lo que se vaya necesitando:
+ * API_URL_BASE = "https://opentdb.com/api.php?"
+ * Y antes de usarlo desde cualquier punto de la aplicación crearíamos la url adecuada
+ * const cantidad = 50; const categoria = 21; const tipo = "multiple"; (en tu caso encode y lang tambien)
+ * const apiUrl = `${API_URL_BASE}amount=${cantidad}&category=${categoria}&type=${tipo}`;
+ */
     // Fetch preguntas de categoría Deportes y filtrar las que contengan "fútbol"
     async function fetchFootballQuestions() {
       const url =
